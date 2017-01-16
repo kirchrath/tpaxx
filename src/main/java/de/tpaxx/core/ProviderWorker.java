@@ -9,6 +9,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -22,7 +23,7 @@ public abstract class ProviderWorker<T extends Service> implements ServiceProvid
 
         return getProviders()
                 .stream()
-                .map(provider -> (Callable<List<T>>) () -> provider.find(candidate))
+                .map((Function<ServiceProvider, Callable<List<T>>>) provider -> (Callable<List<T>>) () -> provider.find(candidate))
                 .collect(Collectors.toList());
     }
 
