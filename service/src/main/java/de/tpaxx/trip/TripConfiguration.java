@@ -1,7 +1,7 @@
 package de.tpaxx.trip;
 
-import de.tpaxx.core.interfaces.TripServiceProvider;
-import de.tpaxx.core.interfaces.services.TripService;
+import de.tpaxx.interfaces.TripServiceProvider;
+import de.tpaxx.interfaces.services.TripService;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

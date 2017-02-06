@@ -1,6 +1,6 @@
-package de.tpaxx.core.interfaces;
+package de.tpaxx.interfaces;
 
-import de.tpaxx.core.interfaces.services.Service;
+import de.tpaxx.interfaces.services.Service;
 
 import java.util.List;
 

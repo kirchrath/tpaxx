@@ -1,7 +1,7 @@
-package de.tpaxx.core.interfaces;
+package de.tpaxx.interfaces;
 
-import de.tpaxx.core.interfaces.services.Service;
-import de.tpaxx.core.interfaces.services.TripService;
+import de.tpaxx.interfaces.services.Service;
+import de.tpaxx.interfaces.services.TripService;
 
 /**
  * Created by wasp on 1/9/17.

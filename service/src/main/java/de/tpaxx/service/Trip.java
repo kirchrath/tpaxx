@@ -1,6 +1,6 @@
 package de.tpaxx.service;
 
-import de.tpaxx.core.interfaces.services.TripService;
+import de.tpaxx.interfaces.services.TripService;
 import de.tpaxx.trip.MultiTripServiceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

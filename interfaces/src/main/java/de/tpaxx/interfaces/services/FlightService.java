@@ -1,4 +1,4 @@
-package de.tpaxx.core.interfaces.services;
+package de.tpaxx.interfaces.services;
 
 /**
  * Created by wasp on 1/7/17.

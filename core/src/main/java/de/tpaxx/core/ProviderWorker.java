@@ -1,7 +1,7 @@
 package de.tpaxx.core;
 
-import de.tpaxx.core.interfaces.ServiceProvider;
-import de.tpaxx.core.interfaces.services.Service;
+import de.tpaxx.interfaces.ServiceProvider;
+import de.tpaxx.interfaces.services.Service;
 
 import java.util.ArrayList;
 import java.util.List;
