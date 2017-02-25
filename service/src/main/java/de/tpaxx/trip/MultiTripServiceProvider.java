@@ -11,9 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 
-/**
- * Created by wasp on 1/11/17.
- */
 @Service
 public class MultiTripServiceProvider extends ProviderWorker<TripService> {
 
