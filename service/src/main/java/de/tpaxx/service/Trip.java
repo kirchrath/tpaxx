@@ -10,10 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * Created by wasp on 1/8/17.
- */
-
 @RestController
 public class Trip {
     public static final String BASE = "/trip";

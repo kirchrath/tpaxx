@@ -12,9 +12,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-/**
- * Created by wasp on 1/11/17.
- */
 public abstract class ProviderWorker<T extends Service> implements ServiceProvider<T> {
 
     public abstract List<ServiceProvider> getProviders();

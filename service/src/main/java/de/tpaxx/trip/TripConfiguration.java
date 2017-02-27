@@ -9,9 +9,6 @@ import org.springframework.context.annotation.Configuration;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by wasp on 1/16/17.
- */
 @Configuration
 public class TripConfiguration {
     @ConditionalOnMissingBean(TripServiceProvider.class)
