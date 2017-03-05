@@ -1,0 +1,40 @@
+{
+    "name": "tpaxx-trip",
+    "namespace": "tpaxx.packages.trip",
+    "type": "code",
+    "toolkit": "classic",
+    "creator": "anonymous",
+    "summary": "Short summary",
+    "detailedDescription": "Long description of package",
+    "version": "1.0.0",
+    "compatVersion": "1.0.0",
+    "format": "1",
+    "slicer": {
+        "js": [
+            {
+                "path": "${package.dir}/sass/example/custom.js",
+                "isWidgetManifest": true
+            }
+        ]
+    },
+
+    "output": "${package.dir}/build",
+
+    "local": true,
+
+    "classpath": [
+        "${package.dir}/src"
+    ],
+
+    /**
+     * Comma-separated string with the paths of directories or files to search. Any classes
+     * declared in these locations will be automatically required and included in the build.
+     * If any file defines an Ext JS override (using Ext.define with an "override" property),
+     * that override will in fact only be included in the build if the target class specified
+     * in the "override" property is also included.
+     */
+    "overrides": [
+        "${package.dir}/overrides"
+    ],
+    "requires": []
+}
