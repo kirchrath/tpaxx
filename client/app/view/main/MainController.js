@@ -9,6 +9,28 @@ Ext.define('tpaxx.view.main.MainController', {
 
     alias: 'controller.main',
 
+    routes: {
+        ':root': {
+            action: 'selectMenu',
+            condtions: {
+                ':root': '[a-z]+'
+            }
+        }
+    },
+
+    selectMenu: function (root) {
+        var tabPanel = this.getView();
+        var index = tabPanel.items.findIndexBy(function (tab) {
+            return tab.url === root;
+        });
+
+        tabPanel.setActiveTab(index);
+    },
+
+    onTabChange: function (panel, tab) {
+        this.redirectTo(tab.url);
+    },
+
     onItemSelected: function (sender, record) {
         Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
     },

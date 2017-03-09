@@ -27,6 +27,10 @@ Ext.define('tpaxx.view.main.Main', {
     titleRotation: 0,
     tabRotation: 0,
 
+    listeners: {
+        tabchange: 'onTabChange'
+    },
+
     header: {
         layout: {
             align: 'stretchmax'
@@ -90,13 +94,15 @@ Ext.define('tpaxx.view.main.Main', {
             iconCls: 'fa-search',
             items: [{
                 xtype: 'tpaxx-search-main'
-            }]
+            }],
+            url: 'search'
         }, {
            title: 'Settings',
            iconCls: 'fa-cog',
            bind: {
                html: '{loremIpsum}'
-           }
+           },
+           url: 'settings'
         }];
         return items;
     }

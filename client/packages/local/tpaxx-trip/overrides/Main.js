@@ -13,7 +13,8 @@ Ext.define('tpaxx.packages.trip.Main',{
             iconCls: 'fa-globe',
             items: [{
                 xtype: 'tpaxx-packages-trip-all'
-            }]
+            }],
+            url: 'trip'
         });
 
         return items;

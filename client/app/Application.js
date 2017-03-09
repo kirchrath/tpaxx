@@ -8,6 +8,8 @@ Ext.define('tpaxx.Application', {
     
     name: 'tpaxx',
 
+    defaultToken: 'search',
+
     stores: [
         // TODO: add global / shared stores here
     ],
