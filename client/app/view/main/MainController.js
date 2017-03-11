@@ -10,34 +10,31 @@ Ext.define('tpaxx.view.main.MainController', {
     alias: 'controller.main',
 
     routes: {
-        ':root': {
-            action: 'selectMenu',
-            condtions: {
-                ':root': '[a-z]+'
-            }
-        }
+        ':main': 'selectMenu',
+        ':main/:sub': 'selectMenu',
+        ':main/:sub/:detail': 'selectMenu',
+        ':main/:sub/:detail/:idx': 'selectMenu'
     },
 
-    selectMenu: function (root) {
-        var tabPanel = this.getView();
-        var index = tabPanel.items.findIndexBy(function (tab) {
-            return tab.url === root;
-        });
-
-        tabPanel.setActiveTab(index);
+    onTabChange: function () {
+        this.naivgateToCurrent();
     },
 
-    onTabChange: function (panel, tab) {
-        this.redirectTo(tab.url);
+    naivgateToCurrent: function () {
+        var url = this.getView().getUrl();
+        this.redirectTo(url);
     },
 
-    onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
-    },
+    selectMenu: function () {
+        var rootView = this.getView();
+        var path = Array.prototype.slice.call(arguments);
 
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
+        var found = rootView.selectMenu(path);
+        if (!found) {
+            //TODO: show 404 page
+            console.log('Page not found');
+        } else {
+            this.naivgateToCurrent();
         }
     }
 });

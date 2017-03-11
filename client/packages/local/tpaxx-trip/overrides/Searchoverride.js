@@ -11,11 +11,12 @@ var store = Ext.create('Ext.data.Store', {
 Ext.define('tpaxx.packages.trip.Searchoverride',{
     override: 'tpaxx.view.search.Main',
 
-    getItems: function () {
+    getMenuItems: function () {
         var items = this.callParent();
 
         items.push({
             title: 'Trip',
+            url: 'trip',
             items: [{
                 xtype: 'tpaxx-packages-trip-search'
             }]

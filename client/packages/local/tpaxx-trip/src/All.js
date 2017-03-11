@@ -48,5 +48,9 @@ Ext.define('tpaxx.packages.trip.All',{
         store: store,
         dock: 'bottom',
         displayInfo: true
-    }]
+    }],
+
+    initComponent: function () {
+        this.callParent();
+    }
 });

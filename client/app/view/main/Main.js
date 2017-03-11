@@ -6,7 +6,7 @@
  * TODO - Replace this content of this view to suite the needs of your application.
  */
 Ext.define('tpaxx.view.main.Main', {
-    extend: 'Ext.tab.Panel',
+    extend: 'tpaxx.packages.core.MenuPanel',
     xtype: 'app-main',
 
     requires: [
@@ -26,10 +26,6 @@ Ext.define('tpaxx.view.main.Main', {
     tabBarHeaderPosition: 1,
     titleRotation: 0,
     tabRotation: 0,
-
-    listeners: {
-        tabchange: 'onTabChange'
-    },
 
     header: {
         layout: {
@@ -62,6 +58,10 @@ Ext.define('tpaxx.view.main.Main', {
         }
     },
 
+    listeners: {
+        tabchange: 'onTabChange'
+    },
+
     defaults: {
         bodyPadding: 10,
         layout: 'fit',
@@ -79,13 +79,6 @@ Ext.define('tpaxx.view.main.Main', {
                 }
             }
         }
-    },
-
-    item: [],
-
-    initComponent: function () {
-        this.items = this.getMenuItems();
-        this.callParent();
     },
 
     getMenuItems: function () {

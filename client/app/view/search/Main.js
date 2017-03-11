@@ -1,6 +1,6 @@
 
 Ext.define('tpaxx.view.search.Main',{
-    extend: 'Ext.tab.Panel',
+    extend: 'tpaxx.packages.core.MenuPanel',
     fullscreen: true,
 
     requires: [
@@ -18,14 +18,5 @@ Ext.define('tpaxx.view.search.Main',{
 
     defaults: {
         layout: 'fit'
-    },
-
-    initComponent: function () {
-        this.items = this.getItems();
-        this.callParent();
-    },
-
-    getItems: function () {
-        return [];
     }
 });
