@@ -36,9 +36,9 @@ Ext.define('tpaxx.view.main.Main', {
                 text: '{name}'
             },
             flex: 0,
-            width: 160
+            width: 100
         },
-        iconCls: 'fa-th-list'
+        iconCls: 'fa-paper-plane-o'
     },
 
     tabBar: {
