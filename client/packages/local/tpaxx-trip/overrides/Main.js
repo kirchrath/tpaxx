@@ -3,7 +3,7 @@ Ext.define('tpaxx.packages.trip.Main',{
     override: 'tpaxx.view.main.Main',
 
     requires: [
-        'tpaxx.packages.trip.All'
+        'tpaxx.packages.trip.Main'
     ],
 
     getMenuItems: function () {
@@ -12,7 +12,7 @@ Ext.define('tpaxx.packages.trip.Main',{
             title: 'Trip',
             iconCls: 'fa-globe',
             items: [{
-                xtype: 'tpaxx-packages-trip-all'
+                xtype: 'tpaxx-packages-trip-main'
             }],
             url: 'trip'
         });

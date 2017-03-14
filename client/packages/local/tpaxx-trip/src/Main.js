@@ -8,19 +8,19 @@ var store = Ext.create('Ext.data.Store', {
     ]
 });
 
-Ext.define('tpaxx.packages.trip.All',{
+Ext.define('tpaxx.packages.trip.Main',{
     extend: 'Ext.grid.Panel',
-    alias: 'widget.tpaxx-packages-trip-all',
+    alias: 'widget.tpaxx-packages-trip-main',
 
     requires: [
-        'tpaxx.packages.trip.AllController',
-        'tpaxx.packages.trip.AllModel'
+        'tpaxx.packages.trip.MainController',
+        'tpaxx.packages.trip.MainModel'
     ],
 
-    controller: 'tpaxx-packages-trip-all',
+    controller: 'tpaxx-packages-trip-main',
 
     viewModel: {
-        type: 'tpaxx-packages-trip-all'
+        type: 'tpaxx-packages-trip-main'
     },
 
     title: 'Trip-Management',

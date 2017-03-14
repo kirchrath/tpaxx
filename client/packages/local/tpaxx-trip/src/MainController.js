@@ -1,6 +1,6 @@
-Ext.define('tpaxx.packages.trip.AllController', {
+Ext.define('tpaxx.packages.trip.MainController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.tpaxx-packages-trip-all',
+    alias: 'controller.tpaxx-packages-trip-main',
 
 
     requires: [
