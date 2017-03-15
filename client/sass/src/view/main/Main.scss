@@ -25,12 +25,12 @@
     $ui-tab-font-size-over: 15px,
     $ui-tab-font-size-active: 15px,
     $ui-tab-line-height: 19px,
-    $ui-tab-font-weight: bold,
+    $ui-tab-font-weight: normal,
     $ui-tab-font-weight-over: bold,
-    $ui-tab-font-weight-active: bold,
+    $ui-tab-font-weight-active: normal,
     $ui-tab-icon-width: 24px,
     $ui-tab-icon-height: 24px,
-    $ui-tab-icon-spacing: 5px,
+    $ui-tab-icon-spacing: 10px,
     $ui-bar-background-color: #404040,
     $ui-bar-background-gradient: 'none',
     $ui-bar-padding: 0,
@@ -45,15 +45,15 @@
     $ui-header-color: #fff,
     $ui-header-glyph-color: #fff,
     $ui-header-glyph-opacity: 1,
-    $ui-header-font-size: 20px,
+    $ui-header-font-size: 18px,
     $ui-header-line-height: 24px,
-    $ui-header-font-weight: bold,
+    $ui-header-font-weight: normal,
     $ui-header-icon-height: 24px,
     $ui-header-icon-width: 24px,
     $ui-header-icon-spacing: 15px,
-    $ui-header-background-color: $base-color,
+    $ui-header-background-color: #146600u,
     $ui-header-padding: 0,
-    $ui-header-text-margin: 36px,
+    $ui-header-text-margin: 24px 120px 24px 24px,
     $ui-header-noborder-adjust: false
 );
 
@@ -80,4 +80,9 @@
 .x-panel-header-title-navigation > .x-title-text-navigation:after {
     top: 30px;
     right: -24px;
+}
+
+.x-panel-header-navigation-vertical {
+    box-shadow: 0px 0 5px 1px rgba(0, 0, 0, 0.6);
+    z-index: 3;
 }

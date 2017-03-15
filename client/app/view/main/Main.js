@@ -63,7 +63,7 @@ Ext.define('tpaxx.view.main.Main', {
     },
 
     defaults: {
-        bodyPadding: 10,
+        bodyPadding: '0 0 0 1',
         layout: 'fit',
         tabConfig: {
             plugins: 'responsive',
@@ -92,9 +92,13 @@ Ext.define('tpaxx.view.main.Main', {
         }, {
            title: 'Settings',
            iconCls: 'fa-cog',
-           bind: {
-               html: '{loremIpsum}'
-           },
+           items: [{
+               title: 'Settings',
+               bodyPadding: 10,
+               bind: {
+                   html: '{loremIpsum}'
+               }
+           }],
            url: 'settings'
         }];
         return items;
