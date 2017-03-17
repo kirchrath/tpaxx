@@ -1,5 +1,5 @@
 
-Ext.define('tpaxx.packages.trip.Main',{
+Ext.define('tpaxx.packages.trip.overrides.Main',{
     override: 'tpaxx.view.main.Main',
 
     requires: [

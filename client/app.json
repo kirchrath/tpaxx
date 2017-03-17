@@ -67,7 +67,8 @@
     "requires": [
         "font-awesome",
         "tpaxx-trip",
-        "tpaxx-core"
+        "tpaxx-core",
+        "tpaxx-allotment"
     ],
 
     /**
