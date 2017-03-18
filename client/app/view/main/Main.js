@@ -59,7 +59,7 @@ Ext.define('tpaxx.view.main.Main', {
     },
 
     listeners: {
-        tabchange: 'onTabChange'
+        navigate: 'onNavigate'
     },
 
     defaults: {
@@ -82,7 +82,7 @@ Ext.define('tpaxx.view.main.Main', {
     },
 
     getMenuItems: function () {
-        var items = [{
+        return [{
             title: 'Search',
             iconCls: 'fa-search',
             items: [{
@@ -101,6 +101,5 @@ Ext.define('tpaxx.view.main.Main', {
            }],
            url: 'settings'
         }];
-        return items;
     }
 });

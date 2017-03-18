@@ -20,13 +20,15 @@ Ext.define('tpaxx.view.main.MainController', {
         ':main/:sub/:detail/:idx': 'selectMenu'
     },
 
-    onTabChange: function () {
-        this.naivgateToCurrent();
+    onNavigate: function (url) {
+        this.redirectTo(url);
     },
 
     naivgateToCurrent: function () {
-        var url = this.getView().getUrl();
-        this.redirectTo(url);
+        // var url = this.getView().getUrl();
+        // this.redirectTo(url);
+        var tabPanel = this.getView();
+
     },
 
     selectMenu: function () {
@@ -39,7 +41,7 @@ Ext.define('tpaxx.view.main.MainController', {
             //TODO: show 404 page
             this.showErrorPage();
         } else {
-            this.naivgateToCurrent();
+            rootView.fireEvent('tabchange', rootView, rootView.getActiveTab());
         }
     },
 
