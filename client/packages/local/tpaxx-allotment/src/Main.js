@@ -12,26 +12,8 @@ Ext.define('tpaxx.packages.allotment.Main', {
         return [
             {
                 title: 'Hotel',
-                xtype: 'tpaxx-menupanel',
                 url: 'hotel',
-                plain: true,
-                items: [
-                    {
-                        title: 'Base',
-                        url: 'base',
-                        layout: 'fit',
-                        items: [{
-                            xtype: 'tpaxx-packages-allotment-hotel-baselist'
-                        }]
-                    },
-                    {
-                        title: 'Contract',
-                        url: 'contract',
-                        items: [{
-                            html: 'contract...'
-                        }]
-                    }
-                ]
+                xtype: 'tpaxx-packages-allotment-hotel-baselist'
             },
             {
                 title: 'Flug',
