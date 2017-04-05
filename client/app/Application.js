@@ -12,6 +12,7 @@ Ext.define('tpaxx.Application', {
 
     stores: [
         // TODO: add global / shared stores here
+        'tpaxx.packages.core.store.Country'
     ],
     
     launch: function () {

@@ -4,9 +4,9 @@ Ext.define('tpaxx.packages.allotment.Main', {
 
     title: 'Allotment-Management',
 
-    defaults: {
-        bodyPadding: 10
-    },
+    requires: [
+        'tpaxx.packages.allotment.hotel.BaseList'
+    ],
 
     getMenuItems: function () {
         return [
@@ -19,8 +19,9 @@ Ext.define('tpaxx.packages.allotment.Main', {
                     {
                         title: 'Base',
                         url: 'base',
+                        layout: 'fit',
                         items: [{
-                            html: 'base...'
+                            xtype: 'tpaxx-packages-allotment-hotel-baselist'
                         }]
                     },
                     {

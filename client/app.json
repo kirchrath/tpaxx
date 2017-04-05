@@ -65,6 +65,7 @@
      *      ]
      */
     "requires": [
+        "ux",
         "font-awesome",
         "tpaxx-trip",
         "tpaxx-core",
