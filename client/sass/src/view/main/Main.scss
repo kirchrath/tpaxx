@@ -5,7 +5,7 @@
     $ui: 'navigation',
     $ui-tab-background-color: transparent,
     $ui-tab-background-color-over: #505050,
-    $ui-tab-background-color-active: #303030,
+    $ui-tab-background-color-active: #475360,
     $ui-tab-background-gradient: 'none',
     $ui-tab-background-gradient-over: 'none',
     $ui-tab-background-gradient-active: 'none',
@@ -17,7 +17,9 @@
     $ui-tab-glyph-color-active: #fff,
     $ui-tab-glyph-opacity: 1,
     $ui-tab-border-radius: 0,
-    $ui-tab-border-width: 0,
+    $ui-tab-border-width: 2px 0 0 0,
+    $ui-tab-border-color-active: $base-color,
+    $ui-tab-border-color-over: #c4c4c4,
     $ui-tab-inner-border-width: 0,
     $ui-tab-padding: 24px,
     $ui-tab-margin: 0,
@@ -31,7 +33,8 @@
     $ui-tab-icon-width: 24px,
     $ui-tab-icon-height: 24px,
     $ui-tab-icon-spacing: 10px,
-    $ui-bar-background-color: #404040,
+    $ui-tab-outline-width-focus: 0,
+    $ui-bar-background-color: #3c4a57,
     $ui-bar-background-gradient: 'none',
     $ui-bar-padding: 0,
     $ui-strip-height: 0
@@ -51,7 +54,7 @@
     $ui-header-icon-height: 24px,
     $ui-header-icon-width: 24px,
     $ui-header-icon-spacing: 15px,
-    $ui-header-background-color: #146600u,
+    $ui-header-background-color: darken($base-color,0.1),
     $ui-header-padding: 0,
     $ui-header-text-margin: 24px 120px 24px 24px,
     $ui-header-noborder-adjust: false
@@ -83,6 +86,6 @@
 }
 
 .x-panel-header-navigation-vertical {
-    box-shadow: 0px 0 5px 1px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0 5px 1px rgba(255, 255, 255, 0.6);
     z-index: 3;
 }
