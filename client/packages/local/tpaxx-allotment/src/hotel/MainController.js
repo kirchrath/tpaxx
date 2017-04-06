@@ -4,7 +4,8 @@ Ext.define('tpaxx.packages.allotment.hotel.MainController', {
 
     requires: [
         'tpaxx.packages.allotment.hotel.MainModel',
-        'tpaxx.packages.allotment.hotel.Editor',
+        'tpaxx.packages.allotment.hotel.BaseEditor',
+        'tpaxx.packages.allotment.hotel.DescriptionEditor',
         'tpaxx.packages.allotment.model.HotelBase'
     ],
 
@@ -41,18 +42,29 @@ Ext.define('tpaxx.packages.allotment.hotel.MainController', {
 
     showHotelDialog: function (record) {
         Ext.create('tpaxx.packages.core.Window', {
-            title: 'Hotel Basedata',
-            height: 440,
+            title: 'Hotel Editor',
+            height: 490,
             width: 600,
             modal: true,
             autocenter: true,
             layout: 'fit',
             items: {
-                xtype: 'tpaxx-packages-allotment-hotel-editor'
+                xtype: 'tabpanel',
+                items: [
+                    {
+                        title: 'Basedata',
+                        xtype: 'tpaxx-packages-allotment-hotel-baseeditor'
+                    },
+                    {
+                        title: 'Description',
+                        xtype: 'tpaxx-packages-allotment-hotel-descriptioneditor'
+                    }
+                ]
             },
             onShowComplete: function () {
                 var win = this;
-                var editor = win.items.getAt(0);
+                var winTabPanel = win.items.getAt(0);
+                var editor = winTabPanel.items.getAt(0);
                 editor.fireEvent('loadhotel', record);
             }
         }).show();

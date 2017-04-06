@@ -1,6 +1,6 @@
-Ext.define('tpaxx.packages.allotment.hotel.Editor', {
+Ext.define('tpaxx.packages.allotment.hotel.BaseEditor', {
     extend: 'Ext.form.Panel',
-    xtype: 'tpaxx-packages-allotment-hotel-editor',
+    xtype: 'tpaxx-packages-allotment-hotel-baseeditor',
     scrollable: true,
     bodyPadding: 10,
 
@@ -64,7 +64,9 @@ Ext.define('tpaxx.packages.allotment.hotel.Editor', {
                             xtype: 'rating',
                             name: 'name',
                             allowBlank: false,
-                            bind: '{hotel.category}'
+                            bind: '{hotel.category}',
+                            rounding: 0.5,
+                            scale: '175%'
                         }
                     ]
                 }
