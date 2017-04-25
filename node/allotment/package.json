@@ -1,0 +1,23 @@
+{
+  "name": "tpaxx-allotment",
+  "version": "0.0.1",
+  "description": "Allotment management module for the tpaxx allotment api",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirchrath/tpaxx.git"
+  },
+  "keywords": [
+    "tpaxx",
+    "allotment"
+  ],
+  "author": "kirchrath",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/kirchrath/tpaxx/issues"
+  },
+  "homepage": "https://github.com/kirchrath/tpaxx#readme"
+}
