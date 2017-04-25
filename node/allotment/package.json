@@ -4,7 +4,7 @@
   "description": "Allotment management module for the tpaxx allotment api",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/kirchrath/tpaxx/issues"
   },
-  "homepage": "https://github.com/kirchrath/tpaxx#readme"
+  "homepage": "https://github.com/kirchrath/tpaxx#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0"
+  }
 }
