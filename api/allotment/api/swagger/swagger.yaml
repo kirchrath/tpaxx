@@ -1,7 +1,7 @@
 swagger: "2.0"
 info:
   version: "0.0.1"
-  title: Hello World App
+  title: tPaxx allotment api
 # during dev, should point to your local machine
 host: localhost:10010
 # basePath prefixes all resource paths 
@@ -42,19 +42,82 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
+  /hotel:
+    x-swagger-router-controller: hotel
+    get:
+      operationId: list
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/HotelsListResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /hotel/{code}:
+    x-swagger-router-controller: hotel
+    get:
+      operationId: get
+      parameters:
+        - name: code
+          in: path
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/HotelDetailResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
   /swagger:
     x-swagger-pipe: swagger_raw
 # complex objects have schema definitions
 definitions:
+  HotelsListResponse:
+    required:
+      - data
+    properties:
+      data:
+        type: array
+        items:
+          $ref: "#/definitions/Hotel"
+      message:
+        type: string
+
+  HotelDetailResponse:
+    type: object
+    properties:
+      data:
+        $ref: "#/definitions/Hotel"
+      message:
+        type: string
+
   HelloWorldResponse:
     required:
       - message
     properties:
       message:
         type: string
+
   ErrorResponse:
+    type: object
     required:
       - message
     properties:
       message:
+        type: string
+
+  Hotel:
+    type: object
+    required:
+      - code
+      - name
+    properties:
+      code:
+        type: string
+      name:
         type: string
