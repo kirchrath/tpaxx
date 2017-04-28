@@ -1,3 +1,3 @@
 module.exports = {
-    hotel: require('./hotel')
+    masterdata: require('./masterdata')
 };
