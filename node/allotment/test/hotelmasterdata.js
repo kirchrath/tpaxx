@@ -21,7 +21,6 @@ describe('HotelMasterdata', () => {
         MongoClient.connect(url, function(err, db) {
             assert.strictEqual(err, null);
             dbConnection = db;
-            db.close();
         });
     });
     after(() => {
@@ -71,8 +70,12 @@ describe('HotelMasterdata', () => {
 
             promise.then((savedHotel) => {
                 const hotelId = savedHotel._id;
-                assert.isOk(hotelId);
-                done()
+                try {
+                    assert.isOk(hotelId);
+                    done();
+                } catch(e) {
+                    done(e);
+                }
             });
 
             promise.catch(() => {

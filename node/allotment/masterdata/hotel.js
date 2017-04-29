@@ -46,11 +46,11 @@ function create(hotel) {
     return new Promise((resolve, reject) => {
         try {
             collection.createIndex({'code': 1}, {unique: true});
-            collection.insertOne(hotel, (err, data) => {
+            collection.insertOne(hotel, (err, response) => {
                 if (err) {
                     reject(err);
                 } else {
-                    resolve(data);
+                    resolve(response.ops[0]);
                 }
             });
         } catch(e) {
