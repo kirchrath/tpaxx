@@ -64,10 +64,12 @@ describe('HotelMasterdata', () => {
 
             manager = new HotelMasterdata(dbConnection);
         });
+
         it ('should create a single hotel', (done) => {
             // When
             const promise = manager.create(randomHotel);
 
+            // Then
             promise.then((savedHotel) => {
                 const hotelId = savedHotel._id;
                 try {
@@ -76,13 +78,80 @@ describe('HotelMasterdata', () => {
                 } catch(e) {
                     done(e);
                 }
-            });
+            }).catch(done);
+        });
 
-            promise.catch(() => {
-                assert.fail(false, true, 'Save failed');
-                done();
-            });
-        })
+        it('should read a single hotel by `code`', (done) => {
+            // When
+            const promise = manager.read(randomHotel.code);
+
+            // Then
+            promise.then((hotel) => {
+                try {
+                    assert.strictEqual(hotel.code, randomHotel.code);
+                    done();
+                } catch(e) {
+                    done(e);
+                }
+            }).catch(done);
+        });
+
+        it('should change the name of a hotel', (done) => {
+            // Given
+            const oldHotelName = randomHotel.name;
+            const newHotelName = oldHotelName + ' - updated';
+            randomHotel.name = newHotelName;
+
+            // When
+            const promise = manager.update(randomHotel);
+
+            // Then
+            promise.then((hotel) => {
+                try {
+                    assert.notStrictEqual(hotel.name, oldHotelName);
+                    assert.strictEqual(hotel.name, newHotelName);
+                    done();
+                } catch (e) {
+                    done(e);
+                }
+            }).catch(done);
+        });
+
+        it('should list all hotels including the current test-hotel', (done) => {
+            // When
+            const promise = manager.list();
+
+            // Then
+            promise.then((hotels) => {
+                try {
+                    const listHotel = hotels.find(hotel => hotel.code === randomHotel.code);
+                    assert.isOk(listHotel);
+                    done();
+                } catch (e) {
+                    done(e);
+                }
+            }).catch(done);
+        });
+
+        it('should drop/delete the test-hotel', (done) => {
+            // When
+            const promise = manager.drop(randomHotel.code);
+
+            // Then
+            promise.then(() => {
+                const promise = manager.list();
+                promise.then(hotels => {
+                    try {
+                        const listHotel = hotels.find(hotel => hotel.code === randomHotel.code);
+                        assert.isUndefined(listHotel);
+                        done();
+                    } catch (e) {
+                        done(e);
+                    }
+                }).catch(done);
+            }).catch(done);
+
+        });
     });
 });
 

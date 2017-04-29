@@ -69,7 +69,7 @@ function update(hotel) {
             if (err) {
                 reject(err);
             } else {
-                resolve();
+                resolve(hotel);
             }
         });
     });
