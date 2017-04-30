@@ -1,6 +1,6 @@
 {
   "name": "tpaxx-allotment",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Allotment management module for the tpaxx allotment api",
   "main": "index.js",
   "scripts": {
